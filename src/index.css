@@ -1,13 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: #fafafa;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.dash {
+    @apply hover:border-b-2 border-black cursor-pointer transition duration-300 ease-in-out
+}
+
+img {
+    @apply cursor-pointer
+}
+
+.cell {
+    @apply border m-2 p-10 border-black
+}
+
+.buttonText {
+    @apply hover:underline slide-in-up underline-offset-2 duration-100 ease-in-out hover:text-black hover:bg-white p-2
 }

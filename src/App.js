@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Accessories from "./components/Accessories";
+import Banner from "./components/Banner";
+import BigGrid from "./components/BigGrid";
+import Footer from "./components/Footer";
+import Handles from "./components/Handles";
+import Header from "./components/Header";
 
-function App() {
+import { useState } from "react";
+
+const App = () => {
+
+  const [ham, setHam] = useState(false)
+  const [search, setSearch] = useState(false)
+  const [xbox, setXbox] = useState(false)
+  const [togMenu, setTogMenu] = useState({})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="cursor-default">
+        <Header ham={ham} xbox={xbox} setXbox={setXbox} togMenu={togMenu} setTogMenu={setTogMenu} setHam={setHam} search={search} setSearch={setSearch} />
+        <div onClick={() => {
+          setSearch(false)
+          setHam(false)
+          setXbox(false)
+          setTogMenu({})
+        }}>
+          <Banner />
+          <Accessories />
+          <BigGrid />
+          <Handles />
+          <Footer />
+        </div>
+      </div>
   );
 }
 
